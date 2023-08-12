@@ -34,7 +34,7 @@ RUN			apt update \
 RUN         dpkg --add-architecture armhf \
 			&& apt update -y \
 			&& apt upgrade -y \
-			&& apt install -y build-essential cmake gcc-arm-linux-gnueabihf git libc6:armhf libncurses5:armhf libstdc++6:armhf libpulse0 locales git wget curl tar zip unzip binutils xz-utils gnupg2 iproute2 gettext
+			&& apt install -y build-essential cmake gcc-arm-linux-gnueabihf git libc6:armhf libncurses5:armhf libstdc++6:armhf libpulse0 locales git wget curl tar zip unzip binutils xz-utils gnupg2 iproute2 gettext libnss-wrapper
 
 ## Install box64 dependencies
 # RUN			apt install -y libc++-dev libc6 git wget curl tar zip unzip binutils xz-utils liblzo2-2 cabextract iproute2 net-tools libatomic1 libsdl1.2debian libsdl2-2.0-0 \
