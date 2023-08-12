@@ -9,7 +9,7 @@ RUN   useradd -m -d /home/container -s /bin/bash container
 
 
 
-RUN         dpkg --add-architecture i386 \
+RUN         dpkg --add-architecture armhf \
             && apt update \
             && apt upgrade -y \
 			&& apt install -y libcurl4-gnutls-dev:i386 libssl3:i386 libcurl4:i386 lib32tinfo6 libtinfo6:i386 lib32z1 lib32stdc++6 libncurses5:i386 libcurl3-gnutls:i386 libsdl2-2.0-0:i386 \
