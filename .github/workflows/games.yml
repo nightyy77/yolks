@@ -22,7 +22,7 @@ jobs:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
         with:
-          platforms: arm64,amd64
+          platforms: arm64
       - uses: docker/setup-buildx-action@v2
         with:
           buildkitd-flags: --debug
@@ -35,7 +35,7 @@ jobs:
         with:
           context: ./games/${{ matrix.game }}
           file: ./games/${{ matrix.game }}/Dockerfile
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/arm64
           push: true
           tags: |
             ghcr.io/darksaid98/games:${{ matrix.game }}
