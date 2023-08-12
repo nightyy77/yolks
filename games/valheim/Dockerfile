@@ -1,4 +1,4 @@
-FROM  --platform=$TARGETOS/$TARGETARCH ubuntu:22.04
+FROM  --platform=$TARGETOS/$TARGETARCH debian:bullseye-slim
 
 LABEL author="Daniel Barton" maintainer="danny6167@gmail.com"
 
@@ -9,12 +9,12 @@ RUN   useradd -m -d /home/container -s /bin/bash container
 
 
 
-RUN         dpkg --add-architecture armhf \
+RUN         dpkg --add-architecture i386 \
             && apt update \
             && apt upgrade -y \
 			&& apt install -y libcurl4-gnutls-dev:i386 libssl3:i386 libcurl4:i386 lib32tinfo6 libtinfo6:i386 lib32z1 lib32stdc++6 libncurses5:i386 libcurl3-gnutls:i386 libsdl2-2.0-0:i386 \
- 				gcc g++ libgcc1 libc++-dev gdb libc6 curl tar iproute2 net-tools libatomic1 libsdl1.2debian libsdl2-2.0-0 \
-        		libfontconfig locales libcurl3-gnutls libpulse-dev libpulse0 libnss-wrapper gettext
+			gcc g++ libgcc1 libc++-dev gdb libc6 curl tar iproute2 net-tools libatomic1 libsdl1.2debian libsdl2-2.0-0 \
+			libfontconfig locales libcurl3-gnutls libpulse-dev libpulse0 libnss-wrapper gettext
 
 ## Install dependencies
 RUN          apt install -y libc++-dev libc6 git wget curl tar zip unzip binutils xz-utils liblzo2-2 cabextract iproute2 net-tools libatomic1 libsdl1.2debian libsdl2-2.0-0 \
