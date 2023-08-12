@@ -26,7 +26,7 @@ RUN			apt update \
 RUN         dpkg --add-architecture armhf \
 			&& apt update -y \
 			&& apt upgrade -y \
-			&& apt install -y build-essential cmake gcc-arm-linux-gnueabihf git libc6:armhf libncurses5:armhf libstdc++6:armhf libpulse0
+			&& apt install -y build-essential cmake gcc-arm-linux-gnueabihf git libc6:armhf libncurses5:armhf libstdc++6:armhf libpulse0 locales
 
 ## Install box64 dependencies
 # RUN			apt install -y libc++-dev libc6 git wget curl tar zip unzip binutils xz-utils liblzo2-2 cabextract iproute2 net-tools libatomic1 libsdl1.2debian libsdl2-2.0-0 \
@@ -37,11 +37,15 @@ RUN         dpkg --add-architecture armhf \
 RUN   update-locale lang=en_US.UTF-8 \
         &&   dpkg-reconfigure --frontend noninteractive locales
 
-##Install box64
+## Install box64
 RUN         wget https://ryanfortner.github.io/box64-debs/box64.list -O /etc/apt/sources.list.d/box64.list \
             && wget -qO- https://ryanfortner.github.io/box64-debs/KEY.gpg | gpg --dearmor -o /etc/apt/trusted.gpg.d/box64-debs-archive-keyring.gpg  \
             && apt update && apt install box64-rpi4arm64 -y
 
+## Install box86
+RUN 		wget https://ryanfortner.github.io/box86-debs/box86.list -O /etc/apt/sources.list.d/box86.list \
+			&& wget -qO- https://ryanfortner.github.io/box86-debs/KEY.gpg | gpg --dearmor -o /etc/apt/trusted.gpg.d/box86-debs-archive-keyring.gpg \
+			&& apt update && apt install box86-rpi4arm64 -y
 
 ENV         USER=container HOME=/home/container
 WORKDIR     /home/container
