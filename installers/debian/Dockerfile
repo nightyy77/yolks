@@ -44,12 +44,10 @@ RUN         if [ "$(uname -m)" = "aarch64" ]; then \
 				dpkg --add-architecture armhf && \
                 apt update && \
                 apt -y install lib32gcc-s1-amd64-cross libsdl2-2.0-0; \
+				wget https://ryanfortner.github.io/box64-debs/box64.list -O /etc/apt/sources.list.d/box64.list \
+					&& wget -qO- https://ryanfortner.github.io/box64-debs/KEY.gpg | gpg --dearmor -o /etc/apt/trusted.gpg.d/box64-debs-archive-keyring.gpg \
+					&& apt update && apt install box64-rpi4arm64 -y \
+				wget https://ryanfortner.github.io/box86-debs/box86.list -O /etc/apt/sources.list.d/box86.list \
+					&& wget -qO- https://ryanfortner.github.io/box86-debs/KEY.gpg | gpg --dearmor -o /etc/apt/trusted.gpg.d/box86-debs-archive-keyring.gpg \
+					&& apt update && apt install box86-rpi4arm64 -y \
             fi
-
-RUN			wget https://ryanfortner.github.io/box64-debs/box64.list -O /etc/apt/sources.list.d/box64.list \
-				&& wget -qO- https://ryanfortner.github.io/box64-debs/KEY.gpg | gpg --dearmor -o /etc/apt/trusted.gpg.d/box64-debs-archive-keyring.gpg \
-				&& apt update && apt install box64-rpi4arm64 -y
-
-RUN			wget https://ryanfortner.github.io/box86-debs/box86.list -O /etc/apt/sources.list.d/box86.list \
-				&& wget -qO- https://ryanfortner.github.io/box86-debs/KEY.gpg | gpg --dearmor -o /etc/apt/trusted.gpg.d/box86-debs-archive-keyring.gpg \
-				&& apt update && apt install box86-rpi4arm64 -y
