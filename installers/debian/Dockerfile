@@ -29,7 +29,18 @@ LABEL       org.opencontainers.image.licenses=MIT
 
 ENV         DEBIAN_FRONTEND=noninteractive
 
-RUN         dpkg --add-architecture i386 \
-				&& apt update \
-				&& apt upgrade -y \
-				&& apt -y --no-install-recommends install ca-certificates curl lib32gcc-s1-amd64-cross libsdl2-2.0-0:i386 git unzip zip tar jq wget
+RUN      apt update && apt upgrade -y \
+			&& apt -y --no-install-recommends install ca-certificates curl git unzip zip tar jq wget gpg
+
+# Only install the needed steamcmd packages on the AMD64 build
+RUN         if [ "$(uname -m)" = "x86_64" ]; then \
+                dpkg --add-architecture i386 && \
+                apt update && \
+                apt -y install lib32gcc-s1 libsdl2-2.0-0:i386; \
+            fi
+
+# Only install the needed steamcmd packages on the AARCH64 build
+RUN         if [ "$(uname -m)" = "aarch64" ]; then \
+                apt update && \
+                apt -y install lib32gcc-s1-amd64-cross libsdl2-2.0-0; \
+            fi
