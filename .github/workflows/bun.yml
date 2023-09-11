@@ -1,4 +1,4 @@
-name: build installers
+name: build bun
 on:
   workflow_dispatch:
   schedule:
@@ -7,18 +7,17 @@ on:
     branches:
       - master
     paths:
-      - installers/**
+      - bun/**
 jobs:
   push:
-    name: "installers:{{ matrix.tag }}"
+    name: "yolks:bun_${{ matrix.tag }}"
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         tag:
-          - alpine
-          - debian
-          - ubuntu
+          - latest
+          - canary
     steps:
       - uses: actions/checkout@v3
       - uses: docker/setup-qemu-action@v2
@@ -29,12 +28,12 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.REGISTRY_TOKEN }}
       - uses: docker/build-push-action@v4
         with:
-          context: ./installers
-          file: ./installers/${{ matrix.tag }}/Dockerfile
+          context: ./bun
+          file: ./bun/${{ matrix.tag }}/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/darksaid98/installers:${{ matrix.tag }}
+            ghcr.io/parkervcp/yolks:bun_${{ matrix.tag }}
