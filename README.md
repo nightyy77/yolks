@@ -38,7 +38,7 @@ is tagged correctly.
 ### [Apps](/apps)
 
 * [`uptimekuma`](/apps/uptimekuma)
-  * `ghcr.io/parkervcp/yolks:apps_uptimekuma`
+  * `ghcr.io/darksaid98/yolks:apps_uptimekuma`
 
 ### [Bot](/bot)
 
@@ -59,9 +59,9 @@ is tagged correctly.
 ### [Bun](/bun)
 
 * [`Bun Canary`](/bun/canary)
-  * `ghcr.io/parkervcp/yolks:bun_canary`
+  * `ghcr.io/darksaid98/yolks:bun_canary`
 * [`Bun Latest`](/bun/latest)
-  * `ghcr.io/parkervcp/yolks:bun_latest`
+  * `ghcr.io/darksaid98/yolks:bun_latest`
 
 ### [Cassandra](/cassandra)
 
@@ -91,15 +91,15 @@ is tagged correctly.
 ### [Elixir](/elixir)
 
 * [`elixir 1.12`](/elixir/1.12)
-  * `ghcr.io/parkervcp/yolks:elixir_1.12`
+  * `ghcr.io/darksaid98/yolks:elixir_1.12`
 * [`elixir 1.13`](/elixir/1.13)
-  * `ghcr.io/parkervcp/yolks:elixir_1.13`
+  * `ghcr.io/darksaid98/yolks:elixir_1.13`
 * [`elixir 1.14`](/elixir/1.14)
-  * `ghcr.io/parkervcp/yolks:elixir_1.14`
+  * `ghcr.io/darksaid98/yolks:elixir_1.14`
 * [`elixir 1.15`](/elixir/1.12)
-  * `ghcr.io/parkervcp/yolks:elixir_1.15`
+  * `ghcr.io/darksaid98/yolks:elixir_1.15`
 * [`elixir latest`](/elixir/latest)
-  * `ghcr.io/parkervcp/yolks:elixir_latest`
+  * `ghcr.io/darksaid98/yolks:elixir_latest`
 
 ### [Erlang](/erlang)
 
