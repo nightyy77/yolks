@@ -122,6 +122,8 @@ is tagged correctly.
   * `ghcr.io/darksaid98/games:minetest`  
 * [`mohaa`](games/mohaa)
   * `ghcr.io/pterodactyl/games:mohaa`  
+* [`Multi Theft Auto: San Andreas`](games/mta)
+  * `ghcr.io/pterodactyl/games:mta`    
 * [`samp`](/games/samp)
   * `ghcr.io/darksaid98/games:samp`  
 * [`source`](/games/source)
@@ -143,6 +145,10 @@ is tagged correctly.
   * `ghcr.io/darksaid98/yolks:go_1.18`
 * [`go1.19`](/go/1.19)
   * `ghcr.io/darksaid98/yolks:go_1.19`
+* [`go1.20`](/go/1.20)
+  * `ghcr.io/darksaid98/yolks:go_1.20`
+* [`go1.21`](/go/1.21)
+  * `ghcr.io/darksaid98/yolks:go_1.21`
 
 ### [Java](/java)
 
@@ -229,6 +235,8 @@ is tagged correctly.
   * `ghcr.io/darksaid98/yolks:python_3.10`
 * [`python3.11`](/python/3.11)
   * `ghcr.io/darksaid98/yolks:python_3.11`
+* [`python3.12`](/python/3.12)
+  * `ghcr.io/darksaid98/yolks:python_3.12`
 
 ### [Redis](/redis)
 
