@@ -13,7 +13,7 @@ RUN			apt update \
 
 ## Install dependencies
 RUN          apt install -y libc++-dev liblzo2-2 cabextract net-tools libatomic1 libsdl1.2debian libsdl2-2.0-0 \
-	libfontconfig libicu67 icu-devtools libunwind8 libssl-dev sqlite3 libsqlite3-dev libmariadbclient-dev-compat libduktape205 ffmpeg apt-transport-https software-properties-common ca-certificates \
+	libfontconfig libicu70 icu-devtools libunwind8 libssl-dev sqlite3 libsqlite3-dev libmariadbclient-dev-compat libduktape207 ffmpeg apt-transport-https software-properties-common ca-certificates \
 	libz-dev rapidjson-dev tzdata libevent-dev libzip4 libsdl2-mixer-2.0-0 libsdl2-image-2.0-0 libgdiplus tini
 
 RUN         dpkg --add-architecture armhf \
