@@ -29,9 +29,10 @@ RUN         apk add --no-cache \
                 sqlite \
                 tzdata \
                 zip \
-                libc6-compat
+                libc6-compat \
+                tini
 
-# updating npm 
+# updating npm
 RUN         npm install npm@latest -g
 
 # download cloudflared
@@ -49,5 +50,9 @@ USER        container
 ENV         USER=container HOME=/home/container
 WORKDIR     /home/container
 
-COPY        ./entrypoint.sh /entrypoint.sh
-CMD         ["/bin/ash", "/entrypoint.sh"]
+STOPSIGNAL SIGINT
+
+COPY        --chown=container:container ./entrypoint.sh /entrypoint.sh
+RUN         chmod +x /entrypoint.sh
+ENTRYPOINT    ["/sbin/tini", "-g", "--"]
+CMD         ["/entrypoint.sh"]

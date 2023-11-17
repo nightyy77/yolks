@@ -14,7 +14,7 @@ RUN			apt update \
 ## Install dependencies
 RUN          apt install -y libc++-dev liblzo2-2 cabextract net-tools libatomic1 libsdl1.2debian libsdl2-2.0-0 \
 	libfontconfig libicu67 icu-devtools libunwind8 libssl-dev sqlite3 libsqlite3-dev libmariadbclient-dev-compat libduktape205 ffmpeg apt-transport-https software-properties-common ca-certificates \
-	libz-dev rapidjson-dev tzdata libevent-dev libzip4 libsdl2-mixer-2.0-0 libsdl2-image-2.0-0 libgdiplus
+	libz-dev rapidjson-dev tzdata libevent-dev libzip4 libsdl2-mixer-2.0-0 libsdl2-image-2.0-0 libgdiplus tini
 
 RUN         dpkg --add-architecture armhf \
 	&& apt update -y \
@@ -43,10 +43,14 @@ WORKDIR     /home/container
 ## Prepare NSS Wrapper for the entrypoint as a workaround for Valheim requiring a valid UID
 ENV         NSS_WRAPPER_PASSWD=/tmp/passwd NSS_WRAPPER_GROUP=/tmp/group
 RUN         touch ${NSS_WRAPPER_PASSWD} ${NSS_WRAPPER_GROUP} \
-	&& chgrp 0 ${NSS_WRAPPER_PASSWD} ${NSS_WRAPPER_GROUP} \
-	&& chmod g+rw ${NSS_WRAPPER_PASSWD} ${NSS_WRAPPER_GROUP}
+            && chgrp 0 ${NSS_WRAPPER_PASSWD} ${NSS_WRAPPER_GROUP} \
+            && chmod g+rw ${NSS_WRAPPER_PASSWD} ${NSS_WRAPPER_GROUP}
 ADD         passwd.template /passwd.template
 
 
-COPY  ./entrypoint.sh /entrypoint.sh
-CMD   [ "/bin/bash", "/entrypoint.sh" ]
+STOPSIGNAL SIGINT
+
+COPY        --chown=container:container ./entrypoint.sh /entrypoint.sh
+RUN         chmod +x /entrypoint.sh
+ENTRYPOINT    ["/usr/bin/tini", "-g", "--"]
+CMD         ["/entrypoint.sh"]
