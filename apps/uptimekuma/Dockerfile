@@ -32,7 +32,7 @@ RUN         apk add --no-cache \
                 libc6-compat \
                 tini
 
-# updating npm
+# updating npm 
 RUN         npm install npm@latest -g
 
 # download cloudflared
