@@ -20,6 +20,12 @@ RUN         dpkg --add-architecture armhf \
 	&& apt update -y \
 	&& apt upgrade -y \
 	&& apt install -y build-essential cmake gcc-arm-linux-gnueabihf git libc6:armhf libncurses5:armhf libstdc++6:armhf libpulse0 locales git wget curl tar zip unzip binutils xz-utils gnupg2 iproute2 gettext libnss-wrapper
+# RUN         dpkg --add-architecture i386 \
+#             && apt update \
+#             && apt upgrade -y \
+# 			&& apt install -y libcurl4-gnutls-dev:i386 libssl3:i386 libcurl4:i386 lib32tinfo6 libtinfo6:i386 lib32z1 lib32stdc++6 libncurses5:i386 libcurl3-gnutls:i386 libsdl2-2.0-0:i386 \
+#  				gcc g++ libgcc1 libc++-dev gdb libc6 curl tar iproute2 net-tools libatomic1 libsdl1.2debian libsdl2-2.0-0 \
+#         		libfontconfig locales libcurl3-gnutls libpulse-dev libpulse0 libnss-wrapper gettext tini
 
 ## configure locale
 RUN   update-locale lang=en_US.UTF-8 \

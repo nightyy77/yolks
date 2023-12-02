@@ -3,7 +3,7 @@ FROM --platform=$TARGETOS/$TARGETARCH elixir:1.15.4-slim
 LABEL author="MrAvox" maintainer="mravox@proton.me"
 
 RUN  apt update \
-            && apt -y install git dnsutils curl iproute2 ffmpeg \
+            && apt -y install git dnsutils curl iproute2 ffmpeg tini \
             && useradd -m -d /home/container container
 
 USER container

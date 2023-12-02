@@ -87,6 +87,8 @@ is tagged correctly.
   * `ghcr.io/darksaid98/yolks:dotnet_6`
 * [`dotnet7.0`](/dotnet/7)
   * `ghcr.io/darksaid98/yolks:dotnet_7`
+* [`dotnet8.0`](/dotnet/8)
+  * `ghcr.io/darksaid98/yolks:dotnet_8`
 
 ### [Elixir](/elixir)
 
