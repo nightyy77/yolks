@@ -16,14 +16,7 @@ jobs:
       fail-fast: false
       matrix:
         tag:
-          - 11
           - 17
-          - 19
-          - 17-JDK
-          - 20-JDK
-          - 21-JDK
-          - 11-EE
-          - 17-EE
     steps:
       - uses: actions/checkout@v3
       - uses: docker/setup-qemu-action@v2
