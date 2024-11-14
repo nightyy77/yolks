@@ -6,7 +6,7 @@ ENV         DEBIAN_FRONTEND noninteractive
 
 RUN         apt update -y \
             && apt upgrade -y \
-            && apt install -y apt-transport-https wget curl iproute2 libgdiplus tini \
+            && apt install -y apt-transport-https wget curl git git-lfs tar iproute2 libgdiplus tini \
             && wget https://dot.net/v1/dotnet-install.sh \
             && D_V="$(curl -sSL https://dotnet.microsoft.com/en-us/download/dotnet/5.0 | grep -i  '<h3 id="sdk-5.*">SDK 5.*.*</h3>'  | head -1 | awk -F\" '{print $3}' | awk '{print $2;}' | sed 's/<\/h3>//g')" \
             && chmod +x dotnet-install.sh \
