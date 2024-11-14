@@ -8,8 +8,10 @@ RUN         apt update \
 
 RUN         npm install npm@latest typescript ts-node @types/node --location=global
 
-RUN 		corepack enable \
-			&& corepack prepare pnpm@latest --activate
+# install pnpm
+RUN         npm install -g corepack
+RUN         corepack enable
+RUN         corepack prepare pnpm@latest --activate
 
 USER        container
 ENV         USER=container HOME=/home/container

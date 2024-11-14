@@ -74,6 +74,14 @@ is tagged correctly.
 
 * [`dart2.17`](/dart/2.17)
   * `ghcr.io/darksaid98/yolks:dart_2.17`
+* [`dart2.18`](/dart/2.18)
+  * `ghcr.io/darksaid98/yolks:dart_2.18`
+* [`dart2.19`](/dart/2.19)
+  * `ghcr.io/darksaid98/yolks:dart_2.19`
+* [`dart3.3`](/dart/3.3)
+  * `ghcr.io/darksaid98/yolks:dart_3.3`
+* [`dart stable`](/dart/stable)
+  * `ghcr.io/darksaid98/yolks:dart_stable`
 
 ### [dotNet](/dotnet)
 
@@ -123,13 +131,17 @@ is tagged correctly.
 * [`minetest`](/games/minetest)
   * `ghcr.io/darksaid98/games:minetest`  
 * [`mohaa`](games/mohaa)
-  * `ghcr.io/pterodactyl/games:mohaa`  
+  * `ghcr.io/darksaid98/games:mohaa`  
 * [`Multi Theft Auto: San Andreas`](games/mta)
-  * `ghcr.io/pterodactyl/games:mta`    
+  * `ghcr.io/darksaid98/games:mta` 
+* [`Rust (dedicated server)`](games/rust)
+  * `ghcr.io/darksaid98/games:rust`      
 * [`samp`](/games/samp)
   * `ghcr.io/darksaid98/games:samp`  
 * [`source`](/games/source)
   * `ghcr.io/darksaid98/games:source`
+* [`thebattleforwesnoth`](/games/thebattleforwesnoth)
+  * `ghcr.io/darksaid98/games:thebattleforwesnoth`
 * [`valheim`](/games/valheim)
   * `ghcr.io/darksaid98/games:valheim`
 
@@ -151,6 +163,8 @@ is tagged correctly.
   * `ghcr.io/darksaid98/yolks:go_1.20`
 * [`go1.21`](/go/1.21)
   * `ghcr.io/darksaid98/yolks:go_1.21`
+* [`go1.22`](/go/1.22)
+  * `ghcr.io/darksaid98/yolks:go_1.22`
 
 ### [Java](/java)
 
@@ -164,6 +178,8 @@ is tagged correctly.
   * `ghcr.io/darksaid98/yolks:java_17`
 * [`java19`](/java/19)
   * `ghcr.io/darksaid98/yolks:java_19`
+* [`java21`](/java/21)
+  * `ghcr.io/darksaid98/yolks:java_21`
 
 ### [MariaDB](/mariadb)
 
@@ -177,6 +193,12 @@ is tagged correctly.
     * `ghcr.io/darksaid98/yolks:mariadb_10.6`
   * [`MariaDB 10.7`](/mariadb/10.7)
     * `ghcr.io/darksaid98/yolks:mariadb_10.7`
+  * [`MariaDB 11.2`](/mariadb/11.2)
+    * `ghcr.io/darksaid98/yolks:mariadb_11.2`
+  * [`MariaDB 11.3`](/mariadb/11.3)
+    * `ghcr.io/darksaid98/yolks:mariadb_11.3`
+  * [`MariaDB 11.4`](/mariadb/11.4)
+    * `ghcr.io/darksaid98/yolks:mariadb_11.4`
 
 ### [MongoDB](/mongodb)
 
@@ -186,6 +208,8 @@ is tagged correctly.
     * `ghcr.io/darksaid98/yolks:mongodb_5`
  * [`MongoDB 6`](/mongodb/6)
     * `ghcr.io/darksaid98/yolks:mongodb_6`    
+ * [`MongoDB 7`](/mongodb/7)
+    * `ghcr.io/darksaid98/yolks:mongodb_7`
 
 ### [Mono](/mono)
 
@@ -208,8 +232,11 @@ is tagged correctly.
   * `ghcr.io/darksaid98/yolks:nodejs_19`
 * [`node20`](/nodejs/20)
   * `ghcr.io/darksaid98/yolks:nodejs_20`
-
-
+* [`node21`](/nodejs/21)
+  * `ghcr.io/darksaid98/yolks:nodejs_21`
+* [`node23`](/nodejs/23)
+  * `ghcr.io/darksaid98/yolks:nodejs_23`
+  
 ### [PostgreSQL](/postgres)
 
   * [`Postgres 9`](/postgres/9)
@@ -265,6 +292,10 @@ is tagged correctly.
   * `ghcr.io/darksaid98/steamcmd:dotnet`
 * [`SteamCMD Proton`](/steamcmd/proton)
   * `ghcr.io/darksaid98/steamcmd:proton`
+* [`SteamCMD Proton`](/steamcmd/proton_8)
+  * `ghcr.io/darksaid98/steamcmd:proton_8`
+* [`SteamCMD Sniper latest`](/steamcmd/sniper)
+  * `ghcr.io/darksaid98/steamcmd:sniper`
 * [`SteamCMD Ubuntu latest LTS`](/steamcmd/ubuntu)
   * `ghcr.io/darksaid98/steamcmd:ubuntu`
 
