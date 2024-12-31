@@ -1,4 +1,4 @@
-FROM --platform=$TARGETOS/$TARGETARCH docker.io/golang:1.23.3 AS builder
+FROM --platform=$TARGETOS/$TARGETARCH golang:1.23.3 AS builder
 
 ENV         DEBIAN_FRONTEND noninteractive
 
@@ -20,10 +20,14 @@ RUN CGO_ENABLED=0 GOOS=linux go build -v -ldflags "-X github.com/botlabs-gg/yagp
 
 
 
-FROM --platform=$TARGETOS/$TARGETARCH docker.io/alpine:latest
+FROM --platform=$TARGETOS/$TARGETARCH debian:bookworm-slim
+
+ENV         DEBIAN_FRONTEND noninteractive
 
 # Dependencies: ca-certificates for client TLS, tzdata for timezone and ffmpeg for soundboard support
-RUN apk --no-cache add ca-certificates tini ffmpeg tzdata
+RUN apt update -y \
+	&& apt upgrade -y \
+	&& apt install -y ca-certificates tini ffmpeg tzdata
 
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
