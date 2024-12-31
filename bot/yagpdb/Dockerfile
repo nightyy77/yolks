@@ -37,7 +37,8 @@ USER        container
 ENV         USER=container HOME=/home/container
 WORKDIR     /home/container
 
-COPY --from=builder /appbuild/yagpdb/cmd/yagpdb/yagpdb yagpdb
+COPY --from=builder /appbuild/yagpdb/cmd/yagpdb/yagpdb /usr/bin/yagpdb
+RUN         chmod +x /usr/bin/yagpdb
 
 STOPSIGNAL SIGINT
 
