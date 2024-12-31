@@ -20,29 +20,27 @@ RUN CGO_ENABLED=0 GOOS=linux go build -v -ldflags "-X github.com/botlabs-gg/yagp
 
 
 
-FROM --platform=$TARGETOS/$TARGETARCH debian:bookworm-slim
-
-ENV         DEBIAN_FRONTEND noninteractive
+FROM --platform=$TARGETOS/$TARGETARCH alpine:latest
 
 # Dependencies: ca-certificates for client TLS, tzdata for timezone and ffmpeg for soundboard support
-RUN apt update -y \
-	&& apt upgrade -y \
-	&& apt install -y ca-certificates tini ffmpeg tzdata
+RUN  apk update \
+	&& apk upgrade \
+	&& apk --no-cache add autoconf ca-certificates ffmpeg tzdata tini iproute2 iputils-ping bind-tools curl
 
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 
-RUN         useradd -m -d /home/container -s /bin/bash container
+RUN         adduser -D -h /home/container container -s /bin/bash container
 USER        container
 ENV         USER=container HOME=/home/container
 WORKDIR     /home/container
 
 COPY --from=builder /appbuild/yagpdb/cmd/yagpdb/yagpdb /usr/bin/yagpdb
-RUN         chmod +x /usr/bin/yagpdb
+# RUN chmod +x /usr/bin/yagpdb
 
 STOPSIGNAL SIGINT
 
 COPY        --chown=container:container ./entrypoint.sh /entrypoint.sh
 RUN         chmod +x /entrypoint.sh
-ENTRYPOINT    ["/usr/bin/tini", "-g", "--"]
+ENTRYPOINT    ["/sbin/tini", "-g", "--"]
 CMD         ["/entrypoint.sh"]
