@@ -32,6 +32,7 @@ RUN apt update -y \
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 
+RUN         useradd -m -d /home/container -s /bin/bash container
 USER        container
 ENV         USER=container HOME=/home/container
 WORKDIR     /home/container
