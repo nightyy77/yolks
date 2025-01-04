@@ -17,6 +17,7 @@ jobs:
       matrix:
         app:
           - uptimekuma
+          - mediawiki
     steps:
       - uses: actions/checkout@v4
 
