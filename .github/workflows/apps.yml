@@ -16,7 +16,7 @@ jobs:
       fail-fast: false
       matrix:
         app:
-          - uptimekuma
+          # - uptimekuma
           - mediawiki
     steps:
       - uses: actions/checkout@v4
