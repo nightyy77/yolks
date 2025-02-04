@@ -57,7 +57,7 @@ if [ "${GIT_ENABLED}" == "false" ] || [ "${GIT_ENABLED}" == "0" ]; then
     fi
 else
     echo -e "Using Git is disabled."
-fi
+fi 
 
 # set this variable, dotnet needs it even without it it reports to `dotnet --info` it can not start any aplication without this
 export DOTNET_ROOT=/usr/share/
