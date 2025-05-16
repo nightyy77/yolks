@@ -43,12 +43,13 @@ RUN set -eux; \
 	rm -rf /var/lib/apt/lists/*
 
 # GraalVM Install
+ENV GRAAL_VERSION=17.0.12
 RUN set -eux; \
 	case ${TARGETPLATFORM} in \
 	"linux/amd64")  ARCH=x64  ;; \
 	"linux/arm64")  ARCH=aarch64  ;; \
 	esac; \
-	wget --progress=dot:giga -O /tmp/graalvm.tar.gz https://download.oracle.com/graalvm/${JAVA_VERSION}/latest/graalvm-jdk-${JAVA_VERSION}_linux-${ARCH}_bin.tar.gz; \
+	wget --progress=dot:giga -O /tmp/graalvm.tar.gz https://download.oracle.com/graalvm/${JAVA_VERSION}/archive/graalvm-jdk-${GRAAL_VERSION}_linux-${ARCH}_bin.tar.gz; \
 	mkdir -p "$JAVA_HOME"; \
 	tar --extract \
 	--file /tmp/graalvm.tar.gz \
