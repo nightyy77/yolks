@@ -20,9 +20,7 @@ these images on an arm system, no modification to them or the tag is needed, the
 
 ## Contributing
 
-When adding a new version to an existing image, such as `java v42`, you'd add it within a child folder of `java`, so
-`java/42/Dockerfile` for example. Please also update the correct `.github/workflows` file to ensure that this new version
-is tagged correctly.
+NEXORACLOUD
 
 ## Available Images
 
